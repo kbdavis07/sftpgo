@@ -1,0 +1,10 @@
+{
+    //"image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+    },
+    "dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [5432, 2022, 8080]
+  }
