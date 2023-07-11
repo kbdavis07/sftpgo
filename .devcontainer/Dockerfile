@@ -5,7 +5,7 @@
 
 FROM ubuntu:focal
 
-COPY first-run-notice.txt /tmp/scripts/
+# COPY first-run-notice.txt /tmp/scripts/
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     # Restore man command
@@ -73,8 +73,8 @@ RUN apt-get update \
     # Clean up
     && apt-get autoremove -y && apt-get clean -y \
     # Move first run notice to right spot
-    && mkdir -p "/usr/local/etc/vscode-dev-containers/" \
-    && mv -f /tmp/scripts/first-run-notice.txt /usr/local/etc/vscode-dev-containers/
+    && mkdir -p "/usr/local/etc/vscode-dev-containers/"  
+   # && mv -f /tmp/scripts/first-run-notice.txt /usr/local/etc/vscode-dev-containers/
 
 # Default to bash shell (other shells available at /usr/bin/fish and /usr/bin/zsh)
 ENV SHELL=/bin/bash \
